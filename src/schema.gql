@@ -4,8 +4,23 @@
 
 type Thing {
   id: Int!
+  name: String!
+  thumbnail: String!
 }
 
 type Query {
-  things: [Thing!]!
+  things(page: Int, perPage: Int, sort: ThingsArgsSort = POPULAR, postedAfter: ThingsArgsPostedAfter): [Thing!]!
+  thing(id: Float!): Thing!
+}
+
+enum ThingsArgsSort {
+  POPULAR
+  NEWEST
+  MAKES
+}
+
+enum ThingsArgsPostedAfter {
+  Last7Days
+  Last30Days
+  ThisYear
 }
