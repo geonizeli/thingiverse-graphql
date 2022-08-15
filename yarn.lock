@@ -1957,6 +1957,11 @@ callsites@^3.0.0:
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
+camelcase-object-deep@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/camelcase-object-deep/-/camelcase-object-deep-1.1.7.tgz#e6de1c4eaa1cd1d4d2ad3e77fc85e2ad1801f822"
+  integrity sha512-hKykTR59km6Xo3QOns12em/qScl8N4Q1yAyiJFZ/lfPFHHiOweV5omRL1FWJnNSJL8rXnGZmKC/JSQl/Lyp1pQ==
+
 camelcase@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"

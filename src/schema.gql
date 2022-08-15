@@ -4,8 +4,19 @@
 
 type Thing {
   id: Int!
+  url: String!
   name: String!
   thumbnail: String!
+  previewImage: String!
+  likeCount: Int!
+  makeCount: Int!
+  commentCount: Int!
+
+  """URL to thingiverse.com page"""
+  publicUrl: String!
+
+  """ISO 8601 date string"""
+  createdAt: String!
 }
 
 type Query {

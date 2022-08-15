@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { firstValueFrom } from 'rxjs';
+import * as camelcase from 'camelcase-object-deep';
+import { firstValueFrom, lastValueFrom, map } from 'rxjs';
 import { ThingsArgs } from './dto/things.args';
 import { Thing } from './thing.model';
 
@@ -20,14 +21,22 @@ export class ThingResolver {
 
     const queryStirng = `/search?${params.toString()}`;
 
-    const { data } = await firstValueFrom(
-      this.httpService.get<{
+    this.httpService.axiosRef.interceptors.response.use((response) => {
+      response.data = camelcase(response);
+      return response;
+    });
+
+    type Response = {
+      data: {
         hits: Thing[];
         total: number;
-      }>(queryStirng),
+      }
+    }
+    const { data: response } = await firstValueFrom(
+      this.httpService.get<Response>(queryStirng),
     );
 
-    return data.hits;
+    return response.data.hits
   }
 
   @Query(() => Thing)

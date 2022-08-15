@@ -30,6 +30,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "apollo-server-express": "^3.10.1",
     "axios-cache-adapter": "^2.7.3",
+    "camelcase-object-deep": "^1.1.7",
     "graphql": "^16.5.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
