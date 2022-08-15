@@ -20,7 +20,6 @@ import { httpCacheAdapter } from './utils/httpCacheAdapter';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      debug: true,
     }),
   ],
   providers: [ThingResolver],
