@@ -28,6 +28,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.0.21",
     "@nestjs/platform-express": "^9.0.0",
+    "apollo-server-core": "^3.10.1",
     "apollo-server-express": "^3.10.1",
     "axios-cache-adapter": "^2.7.3",
     "camelcase-object-deep": "^1.1.7",

@@ -3,6 +3,7 @@ import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { join } from 'path';
 import { ThingResolver } from './thing/thing.resolver';
 import { httpCacheAdapter } from './utils/httpCacheAdapter';
@@ -20,6 +21,8 @@ import { httpCacheAdapter } from './utils/httpCacheAdapter';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
   ],
   providers: [ThingResolver],
