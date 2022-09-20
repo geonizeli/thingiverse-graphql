@@ -22,6 +22,7 @@ import { httpCacheAdapter } from './utils/httpCacheAdapter';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: false,
+      introspection: true,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
   ],
